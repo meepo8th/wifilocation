@@ -1,0 +1,1 @@
+jarsigner -verbose -keystore demo.keystore -signedjar G:\nodejs\saigo\platforms\android\build\outputs\apk\android-release-signed.apk G:\nodejs\saigo\platforms\android\build\outputs\apk\android-release-unsigned.apk demo.keystore
