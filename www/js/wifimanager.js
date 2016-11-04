@@ -80,13 +80,28 @@ var addSign = function (x, y, sense) {
     });
   })
 }
+var isDeviceLoad = false;
+function getDeviceUuid() {
+  if (undefined != device) {
+    return device.uuid;
+  }
+  return "";
+}
+function getDeviceModel() {
+  if (undefined != device) {
+    return device.model;
+  }
+  return "";
+}
 var getPosition = function (func) {
   wifiScan(function (data) {
     $.ajax({
       type: 'POST',
       url: localPath + "location/wifi/getPosition",
       data: {
-        wifiInfo: JSON.stringify(data)
+        wifiInfo: JSON.stringify(data),
+        uuid: getDeviceUuid(),
+        model: getDeviceModel(),
       },
       success: function (data) {
         func(data);
@@ -97,5 +112,12 @@ var getPosition = function (func) {
       dataType: "json"
     });
   })
+}
+if (undefined != device) {
+  document.addEventListener("deviceready", onDeviceReady, false);
+  function onDeviceReady() {
+    console.log(device.cordova);
+    isDeviceLoad = true;
+  }
 }
 // setInterval("wifiScan()", 1);
