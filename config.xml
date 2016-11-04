@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.leanit.wifimanager" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>wifimanager</name>
+<widget id="com.leanit.wifilocation" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>wifilocation</name>
   <description>
-        wifimanager
+    wifilocation
     </description>
   <author email="94739473@qq.com" href="http://www.leanit.com.cn//">
       leanit
