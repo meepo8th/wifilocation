@@ -144,7 +144,7 @@
   }, "map");
   var move = function () {
     getPosition(function (data) {
-      timeId = setTimeout("move()", 3000);
+      timeId = setTimeout("move()", 2000);
       map.refresh([{
         type: 'img',
         x: data.x, y: data.y,
