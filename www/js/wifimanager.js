@@ -38,7 +38,7 @@ function showStatusBar(param) {
       document.getElementById("logined").style.display = 'none';
     } else {
       document.getElementById("unlogin").style.display = 'none';
-      document.getElementById("logined").style.display = '';
+      document.getElementById("logined").style   .display = '';
       if (diamondnum) {
         document.getElementById("diamondnum").innerText = diamondnum;
       }
@@ -128,7 +128,6 @@ var getIp = function () {
     async: false,
     success: function (data) {
       ip = data.split("[")[1].split("]")[0];
-
     },
     error: function (data) {
       console.log(JSON.stringify(data));

@@ -128,7 +128,6 @@ var getIp = function () {
     async: false,
     success: function (data) {
       ip = data.split("[")[1].split("]")[0];
-
     },
     error: function (data) {
       console.log(JSON.stringify(data));

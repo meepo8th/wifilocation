@@ -23,7 +23,8 @@
     {
       "locator": "https://github.com/apache/cordova-plugin-device",
       "id": "cordova-plugin-device"
-    }
+    },
+    "cordova-sqlite-storage"
   ],
   "cordovaPlatforms": [
     "android"

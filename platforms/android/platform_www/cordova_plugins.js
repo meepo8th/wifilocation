@@ -15,6 +15,14 @@ module.exports = [
         "clobbers": [
             "device"
         ]
+    },
+    {
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -22,7 +30,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.2",
     "com.pylonproducts.wifiwizard": "0.2.11",
-    "cordova-plugin-device": "1.1.4-dev"
+    "cordova-plugin-device": "1.1.4-dev",
+    "cordova-sqlite-storage": "1.4.8"
 };
 // BOTTOM OF METADATA
 });

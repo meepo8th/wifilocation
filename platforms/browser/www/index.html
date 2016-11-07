@@ -112,7 +112,7 @@
       定位模式&nbsp;&nbsp;
     </button>
   </div>
-  <h1 class="title" style="background-color:gray;">wifimanager</h1>
+  <h1 class="title" style="background-color:gray;">wifilocation</h1>
   <div class="buttons" style="background-color:gray;border-color:gray;">
     <button class="button" onclick="toAddPosition()"
             style="background-color:gray;border-color:gray;">&nbsp;&nbsp;标签模式&nbsp;&nbsp;</button>
@@ -144,7 +144,7 @@
   }, "map");
   var move = function () {
     getPosition(function (data) {
-      timeId = setTimeout("move()", 1000);
+      timeId = setTimeout("move()", 2000);
       map.refresh([{
         type: 'img',
         x: data.x, y: data.y,
@@ -190,7 +190,7 @@
     }
   }
   var addSignPosition = function (e) {
-    addSign(e.left * 1.0 + 10, e.top * 1.0 + 10, "雷恩科技办公室");
+    addSign(e.left * 1.0 + 10, e.top * 1.0 + 10, getIp());
   }
 </script>
 </html>

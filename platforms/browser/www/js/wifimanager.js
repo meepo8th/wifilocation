@@ -1,4 +1,4 @@
-﻿var localPath = "http://192.168.0.102:8080/subway/"
+﻿var localPath = "http://123.56.143.239:8080/subway/"
 var listenerHanddler = {
   'showStatusBar': 'showStatusBar',
   'checkApp': 'checkApp'
@@ -80,13 +80,28 @@ var addSign = function (x, y, sense) {
     });
   })
 }
+var isDeviceLoad = false;
+function getDeviceUuid() {
+  if (undefined != device) {
+    return device.uuid;
+  }
+  return "";
+}
+function getDeviceModel() {
+  if (undefined != device) {
+    return device.model;
+  }
+  return "";
+}
 var getPosition = function (func) {
   wifiScan(function (data) {
     $.ajax({
       type: 'POST',
       url: localPath + "location/wifi/getPosition",
       data: {
-        wifiInfo: JSON.stringify(data)
+        wifiInfo: JSON.stringify(data),
+        uuid: getDeviceUuid(),
+        model: getDeviceModel(),
       },
       success: function (data) {
         func(data);
@@ -97,5 +112,28 @@ var getPosition = function (func) {
       dataType: "json"
     });
   })
+}
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+  console.log(device.cordova);
+  isDeviceLoad = true;
+}
+
+var getIp = function () {
+  var ip = "";
+  $.ajax({
+    type: 'get',
+    url: "http://1212.ip138.com/ic.asp",
+    data: {},
+    async: false,
+    success: function (data) {
+      ip = data.split("[")[1].split("]")[0];
+    },
+    error: function (data) {
+      console.log(JSON.stringify(data));
+    },
+    dataType: "html"
+  });
+  return ip;
 }
 // setInterval("wifiScan()", 1);
